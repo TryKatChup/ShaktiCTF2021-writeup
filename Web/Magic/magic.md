@@ -22,7 +22,7 @@ if (isset ($_POST['c']) && !empty ($_POST['c'])) {
 }
 ```
 We observed the blacklist only filtered a few commands and had no special character filters. We also tested more times, because the entire structure of the site was blind: we found out we had a 60 char limit for the payload.
-Another function we noticed was `create_function('$flag', $code)`. We were allowed to inject interesting commands in `create_function()` (bash command injection).
+Another function we noticed was `create_function('$flag', $code)`. We were allowed to inject interesting commands in `create_function()` (php command injection).
 
 `}system("cat *");/* ` was obtained with a template injection (https://github.com/swisskyrepo/PayloadsAllTheThings) and some attempts.
 For this task we used **Burp Suite**: in _Repeater_ we put the following request:
